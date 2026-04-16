@@ -8,12 +8,6 @@
 **/*.dmp
 **/.thumbs
 
-# No USD files allowed in the repo
-**/*.usd
-**/*.usda
-**/*.usdc
-**/*.usdz
-
 # Python
 .DS_Store
 **/*.egg-info/
@@ -21,7 +15,7 @@
 **/.pytest_cache/
 **/*.pyc
 **/*.pb
-scripts/rsl_rl/__pycache__ # not included in previous pycache ignore ???
+./isaaclab/wanda_velocity_rl/scripts/rsl_rl/__pycache__ # not included in previous pycache ignore ???
 
 # Docker/Singularity
 **/*.sif
