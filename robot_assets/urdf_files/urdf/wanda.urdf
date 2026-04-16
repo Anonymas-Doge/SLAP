@@ -1,0 +1,1508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="wanda">
+  <link
+    name="chassis_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.071898"
+        rpy="0 0 0" />
+      <mass
+        value="13.845" />
+      <inertia
+        ixx="0.073953"
+        ixy="-6.0888E-06"
+        ixz="1.5783E-06"
+        iyy="0.072305"
+        iyz="5.7571E-07"
+        izz="0.12054" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/chassis_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/chassis_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="fr_shoulder_link">
+    <inertial>
+      <origin
+        xyz="-0.0663408032812254 0 -0.0766723024564524"
+        rpy="0 0 0" />
+      <mass
+        value="1.3792992863939" />
+      <inertia
+        ixx="0.00241387574126325"
+        ixy="1.27504998039398E-06"
+        ixz="-0.000414978387513231"
+        iyy="0.00228301553907737"
+        iyz="8.8265488620185E-06"
+        izz="0.00209641455015427" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.253079000000006 -0.0669672613138981 0.0730249999999266"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="chassis_link" />
+    <child
+      link="fr_shoulder_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="fr_thigh_link">
+    <inertial>
+      <origin
+        xyz="-0.0234768237043075 0.00759249477466795 -0.0670144276333277"
+        rpy="0 0 0" />
+      <mass
+        value="1.54861068555342" />
+      <inertia
+        ixx="0.00198836504336937"
+        ixy="0.00167192723315181"
+        ixz="1.71123237159184E-06"
+        iyy="0.005828589065389"
+        iyz="1.50268011553341E-07"
+        izz="0.00770784937870406" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.119000000000003 0 -0.0899999999992207"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="fr_shoulder_link" />
+    <child
+      link="fr_thigh_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fr_tendonDriver_link">
+    <inertial>
+      <origin
+        xyz="0.00752612727583557 0.0146281200492409 -0.00634999999998798"
+        rpy="0 0 0" />
+      <mass
+        value="0.0245276549772372" />
+      <inertia
+        ixx="8.33015160696081E-06"
+        ixy="-2.906228682549E-06"
+        ixz="-2.54007591482584E-21"
+        iyy="4.17672121779798E-06"
+        iyz="-4.15218356297193E-21"
+        izz="1.18475285795457E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_tendonDriver_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_tendonDriver_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_tendonDriver_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.015875"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="fr_thigh_link" />
+    <child
+      link="fr_tendonDriver_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fr_tendon_link">
+    <inertial>
+      <origin
+        xyz="0.141382343473979 -0.0649200552893985 -0.0126999999999879"
+        rpy="0 0 0" />
+      <mass
+        value="0.153078335260698" />
+      <inertia
+        ixx="0.000263548160276317"
+        ixy="0.000566247634823772"
+        ixz="-1.01834696001932E-20"
+        iyy="0.00123670740379268"
+        iyz="4.92159992270819E-21"
+        izz="0.0014992268138734" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_tendon_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_tendon_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_tendon_upper_joint"
+    type="revolute">
+    <origin
+      xyz="0.0203357305033576 0.0395254419949329 0.00634999999999986"
+      rpy="0 0 0" />
+    <parent
+      link="fr_tendonDriver_link" />
+    <child
+      link="fr_tendon_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fr_placeholder_link">
+    <inertial>
+      <origin
+        xyz="-6.30606677987089E-14 -2.28039809258007E-13 -0.032899999999991"
+        rpy="0 0 0" />
+      <mass
+        value="0.00615649587103468" />
+      <inertia
+        ixx="3.16512994437338E-07"
+        ixy="-4.07536045881841E-37"
+        ixz="2.34893333610873E-22"
+        iyy="3.16512994437338E-07"
+        iyz="5.64885986412904E-23"
+        izz="4.02157393710874E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_placeholder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_placeholder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_tendon_lower_joint"
+    type="revolute">
+    <origin
+      xyz="0.28276468694813 -0.129840110578843 0"
+      rpy="0 0 0" />
+    <parent
+      link="fr_tendon_link" />
+    <child
+      link="fr_placeholder_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fr_calf_link">
+    <inertial>
+      <origin
+        xyz="-0.177557990131991 -0.126438433507858 -0.00639889108066549"
+        rpy="0 0 0" />
+      <mass
+        value="0.56115094598437" />
+      <inertia
+        ixx="0.00156111006373153"
+        ixy="-0.00197596557824201"
+        ixz="-1.24249039932725E-19"
+        iyy="0.00301569719430543"
+        iyz="-1.17642794299343E-19"
+        izz="0.00443373277854641" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_calf_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fr_calf_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_calf_joint"
+    type="revolute">
+    <origin
+      xyz="-0.281913757872061 0.12198066700282 -0.0158750000000001"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="fr_thigh_link" />
+    <child
+      link="fr_calf_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fl_shoulder_link">
+    <inertial>
+      <origin
+        xyz="0.0663408032812254 -9.45200398820845E-05 0.0766723024564524"
+        rpy="0 0 0" />
+      <mass
+        value="1.3792992863939" />
+      <inertia
+        ixx="0.00241387574126325"
+        ixy="1.27504998039398E-06"
+        ixz="-0.000414978387513231"
+        iyy="0.00228301553907737"
+        iyz="8.8265488620185E-06"
+        izz="0.00209641455015427" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.253079000000006 0.0665638590730748 0.0730249999999266"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="chassis_link" />
+    <child
+      link="fl_shoulder_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fl_thigh_link">
+    <inertial>
+      <origin
+        xyz="0.0234768237043075 -0.00759249477466795 0.0670144276333277"
+        rpy="0 0 0" />
+      <mass
+        value="1.54861068555342" />
+      <inertia
+        ixx="0.00198836504336937"
+        ixy="0.00167192723315181"
+        ixz="-1.71123237159184E-06"
+        iyy="0.005828589065389"
+        iyz="-1.50268011553341E-07"
+        izz="0.00770784937870406" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.119000000000009 0 0.0899999999992203"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="fl_shoulder_link" />
+    <child
+      link="fl_thigh_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fl_tendonDriver_link">
+    <inertial>
+      <origin
+        xyz="0.00752612727583557 0.0146281200492409 0.00634999999998798"
+        rpy="0 0 0" />
+      <mass
+        value="0.0245276549772372" />
+      <inertia
+        ixx="8.33015160696081E-06"
+        ixy="-2.906228682549E-06"
+        ixz="-2.54007591482584E-21"
+        iyy="4.17672121779798E-06"
+        iyz="-4.15218356297193E-21"
+        izz="1.18475285795457E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_tendonDriver_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_tendonDriver_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_tendonDriver_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.015875"
+      rpy="0 0 0" />
+    <parent
+      link="fl_thigh_link" />
+    <child
+      link="fl_tendonDriver_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fl_tendon_link">
+    <inertial>
+      <origin
+        xyz="0.141382343473979 -0.0649200552893985 0.0126999999999879"
+        rpy="0 0 0" />
+      <mass
+        value="0.153078335260698" />
+      <inertia
+        ixx="0.000263548160276317"
+        ixy="0.000566247634823772"
+        ixz="-1.01834696001932E-20"
+        iyy="0.00123670740379268"
+        iyz="4.92159992270819E-21"
+        izz="0.0014992268138734" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_tendon_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_tendon_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_tendon_upper_joint"
+    type="revolute">
+    <origin
+      xyz="0.0203357305033842 0.0395254419949194 -0.00635000000000008"
+      rpy="0 0 0" />
+    <parent
+      link="fl_tendonDriver_link" />
+    <child
+      link="fl_tendon_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fl_placeholder_link">
+    <inertial>
+      <origin
+        xyz="-8.32667268468867E-14 1.10356168647741E-13 -0.00750000000001272"
+        rpy="0 0 0" />
+      <mass
+        value="0.00615649587103468" />
+      <inertia
+        ixx="3.16512994437338E-07"
+        ixy="-4.07536044302047E-37"
+        ixz="2.34893334347112E-22"
+        iyy="3.16512994437338E-07"
+        iyz="5.64885990402406E-23"
+        izz="4.02157393710874E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_placeholder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_placeholder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_tendon_lower_joint"
+    type="revolute">
+    <origin
+      xyz="0.28276468694804 -0.129840110579039 0"
+      rpy="0 0 0" />
+    <parent
+      link="fl_tendon_link" />
+    <child
+      link="fl_placeholder_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fl_calf_link">
+    <inertial>
+      <origin
+        xyz="-0.177557990131991 -0.126438433507858 0.00639889108066549"
+        rpy="0 0 0" />
+      <mass
+        value="0.56115094598437" />
+      <inertia
+        ixx="0.00156111006373153"
+        ixy="-0.00197596557824201"
+        ixz="-1.24249039932725E-19"
+        iyy="0.00301569719430543"
+        iyz="-1.17642794299343E-19"
+        izz="0.00443373277854641" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_calf_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/fl_calf_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_calf_joint"
+    type="revolute">
+    <origin
+      xyz="0.281913757872058 -0.121980667002827 0.015875"
+      rpy="0 0 0" />
+    <parent
+      link="fl_thigh_link" />
+    <child
+      link="fl_calf_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="br_shoulder_link">
+    <inertial>
+      <origin
+        xyz="0.0663408032812254 -9.45200398820845E-05 0.0766723024564524"
+        rpy="0 0 0" />
+      <mass
+        value="1.3792992863939" />
+      <inertia
+        ixx="0.00241387574126325"
+        ixy="1.27504998039398E-06"
+        ixz="-0.000414978387513231"
+        iyy="0.00228301553907737"
+        iyz="8.8265488620185E-06"
+        izz="0.00209641455015427" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="-0.252698000000028 -0.0672333239207857 0.0736327269221067"
+      rpy="1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="chassis_link" />
+    <child
+      link="br_shoulder_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="br_thigh_link">
+    <inertial>
+      <origin
+        xyz="-0.0234768237043075 0.00759249477466795 -0.0670144276333277"
+        rpy="0 0 0" />
+      <mass
+        value="1.54861068555342" />
+      <inertia
+        ixx="0.00198836504336937"
+        ixy="0.00167192723315181"
+        ixz="1.71123237159184E-06"
+        iyy="0.005828589065389"
+        iyz="1.50268011553341E-07"
+        izz="0.00770784937870406" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.119 0 0.08999999999921"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="br_shoulder_link" />
+    <child
+      link="br_thigh_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="br_tendonDriver_link">
+    <inertial>
+      <origin
+        xyz="0.00752612727583557 0.0146281200492409 -0.00634999999998798"
+        rpy="0 0 0" />
+      <mass
+        value="0.0245276549772372" />
+      <inertia
+        ixx="8.33015160696081E-06"
+        ixy="-2.906228682549E-06"
+        ixz="-2.54007591482584E-21"
+        iyy="4.17672121779798E-06"
+        iyz="-4.15218356297193E-21"
+        izz="1.18475285795457E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_tendonDriver_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_tendonDriver_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_tendonDriver_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0158749999999999"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="br_thigh_link" />
+    <child
+      link="br_tendonDriver_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="br_tendon_link">
+    <inertial>
+      <origin
+        xyz="0.141382343473979 -0.0649200552893985 -0.0126999999999879"
+        rpy="0 0 0" />
+      <mass
+        value="0.153078335260698" />
+      <inertia
+        ixx="0.000263548160276317"
+        ixy="0.000566247634823772"
+        ixz="-1.01834696001932E-20"
+        iyy="0.00123670740379268"
+        iyz="4.92159992270819E-21"
+        izz="0.0014992268138734" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_tendon_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_tendon_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_tendon_upper_joint"
+    type="revolute">
+    <origin
+      xyz="0.0203357305033569 0.0395254419949336 0.00634999999999997"
+      rpy="0 0 0" />
+    <parent
+      link="br_tendonDriver_link" />
+    <child
+      link="br_tendon_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="br_placeholder">
+    <inertial>
+      <origin
+        xyz="2.48689957516035E-14 -2.98649993624167E-13 -0.0329000000000024"
+        rpy="0 0 0" />
+      <mass
+        value="0.00615649587103468" />
+      <inertia
+        ixx="3.16512994437338E-07"
+        ixy="-4.07536045881841E-37"
+        ixz="2.34893333610873E-22"
+        iyy="3.16512994437338E-07"
+        iyz="5.64885986412905E-23"
+        izz="4.02157393710874E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_placeholder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_placeholder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_tendon_lower_joint"
+    type="revolute">
+    <origin
+      xyz="0.28276468694813 -0.129840110578843 0"
+      rpy="0 0 0" />
+    <parent
+      link="br_tendon_link" />
+    <child
+      link="br_placeholder" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="br_calf_link">
+    <inertial>
+      <origin
+        xyz="-0.177557990131991 -0.126438433507858 -0.00639889108066549"
+        rpy="0 0 0" />
+      <mass
+        value="0.56115094598437" />
+      <inertia
+        ixx="0.00156111006373153"
+        ixy="-0.00197596557824201"
+        ixz="-1.24249039932725E-19"
+        iyy="0.00301569719430543"
+        iyz="-1.17642794299343E-19"
+        izz="0.00443373277854641" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_calf_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/br_calf_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_calf_joint"
+    type="revolute">
+    <origin
+      xyz="-0.281913757872058 0.121980667002828 -0.015875"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="br_thigh_link" />
+    <child
+      link="br_calf_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="bl_shoulder_link">
+    <inertial>
+      <origin
+        xyz="0.0663408032812254 9.45200398820845E-05 -0.0766723024564524"
+        rpy="0 0 0" />
+      <mass
+        value="1.3792992863939" />
+      <inertia
+        ixx="0.00241387574126325"
+        ixy="-1.27504998039398E-06"
+        ixz="0.000414978387513231"
+        iyy="0.00228301553907737"
+        iyz="8.8265488620185E-06"
+        izz="0.00209641455015427" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="-0.252698000000028 0.0668299216799625 0.0736327269221064"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="chassis_link" />
+    <child
+      link="bl_shoulder_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="bl_thigh_link">
+    <inertial>
+      <origin
+        xyz="0.0234768237043075 -0.00759249477466795 0.0670144276333277"
+        rpy="0 0 0" />
+      <mass
+        value="1.54861068555342" />
+      <inertia
+        ixx="0.00198836504336937"
+        ixy="0.00167192723315181"
+        ixz="-1.71123237159184E-06"
+        iyy="0.005828589065389"
+        iyz="-1.50268011553341E-07"
+        izz="0.00770784937870406" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.119000000000001 0 -0.0899999999991874"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="bl_shoulder_link" />
+    <child
+      link="bl_thigh_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="bl_tendonDriver_link">
+    <inertial>
+      <origin
+        xyz="0.00752612727583557 0.0146281200492409 0.00634999999998798"
+        rpy="0 0 0" />
+      <mass
+        value="0.0245276549772372" />
+      <inertia
+        ixx="8.33015160696081E-06"
+        ixy="-2.906228682549E-06"
+        ixz="-2.54007591482584E-21"
+        iyy="4.17672121779798E-06"
+        iyz="-4.15218356297193E-21"
+        izz="1.18475285795457E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_tendonDriver_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_tendonDriver_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_tendonDriver_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0158750000000001"
+      rpy="0 0 0" />
+    <parent
+      link="bl_thigh_link" />
+    <child
+      link="bl_tendonDriver_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="bl_tendon_link">
+    <inertial>
+      <origin
+        xyz="0.141382343473979 -0.0649200552893985 0.0126999999999879"
+        rpy="0 0 0" />
+      <mass
+        value="0.153078335260698" />
+      <inertia
+        ixx="0.000263548160276317"
+        ixy="0.000566247634823772"
+        ixz="-1.01834696001932E-20"
+        iyy="0.00123670740379268"
+        iyz="4.92159992270819E-21"
+        izz="0.0014992268138734" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_tendon_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_tendon_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_tendon_upper_joint"
+    type="revolute">
+    <origin
+      xyz="0.0203357305033842 0.0395254419949194 -0.00634999999999997"
+      rpy="0 0 0" />
+    <parent
+      link="bl_tendonDriver_link" />
+    <child
+      link="bl_tendon_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="bl_placeholder_link">
+    <inertial>
+      <origin
+        xyz="9.39248678832882E-14 -1.85629289717326E-13 -0.00749999999999906"
+        rpy="0 0 0" />
+      <mass
+        value="0.00615649587103468" />
+      <inertia
+        ixx="3.16512994437338E-07"
+        ixy="-4.07536044302047E-37"
+        ixz="2.34893334347112E-22"
+        iyy="3.16512994437338E-07"
+        iyz="5.64885990402406E-23"
+        izz="4.02157393710874E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_placeholder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_placeholder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_tendon_lower_link"
+    type="revolute">
+    <origin
+      xyz="0.28276468694804 -0.129840110579039 0"
+      rpy="0 0 0" />
+    <parent
+      link="bl_tendon_link" />
+    <child
+      link="bl_placeholder_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="bl_calf_link">
+    <inertial>
+      <origin
+        xyz="-0.177557990131991 -0.126438433507858 0.00639889108066549"
+        rpy="0 0 0" />
+      <mass
+        value="0.56115094598437" />
+      <inertia
+        ixx="0.00156111006373153"
+        ixy="-0.00197596557824201"
+        ixz="-1.24249039932725E-19"
+        iyy="0.00301569719430543"
+        iyz="-1.17642794299343E-19"
+        izz="0.00443373277854641" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_calf_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_files/meshes/bl_calf_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_calf_joint"
+    type="revolute">
+    <origin
+      xyz="0.281913757872058 -0.121980667002827 0.0158750000000001"
+      rpy="0 0 0" />
+    <parent
+      link="bl_thigh_link" />
+    <child
+      link="bl_calf_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+</robot>
