@@ -1,0 +1,3 @@
+[submodule "isaaclab/wanda_velocity_rl"]
+	path = isaaclab/wanda_velocity_rl
+	url = https://github.com/Anonymas-Doge/wanda_velocity_rl.git
