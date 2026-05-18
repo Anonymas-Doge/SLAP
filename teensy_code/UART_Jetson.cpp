@@ -1,9 +1,12 @@
+#include "UART_Jetson.h"
+
 void UART_Jetson_setup() {
-    Serial.begin(9600);
+    // Serial.begin(9600);
     pinMode(13, OUTPUT);
 }
 
 void UART_Jetson_loop() {
+    // Serial.println ("UART Loop") ;
     if (Serial.available()) {
         String command = Serial.readString();
         command.trim();
