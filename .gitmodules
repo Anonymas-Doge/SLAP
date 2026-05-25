@@ -1,3 +1,6 @@
 [submodule "isaaclab/wanda_velocity_rl"]
 	path = isaaclab/wanda_velocity_rl
 	url = https://github.com/Anonymas-Doge/wanda_velocity_rl.git
+[submodule "jetson"]
+	path = jetson
+	url = https://github.com/srithanandra/slap_project.git
