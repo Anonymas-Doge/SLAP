@@ -8,8 +8,7 @@
 // Controller IDs are moved through a sine wave pattern.
 // ——————————————————————————————————————————————————————————————————————————————
 
-#include <MoteusTeensy.h>
-#include <math.h>
+#include "CANFD.h"
 
 //——————————————————————————————————————————————————————————————————————————————
 //  CAN-FD configuration
