@@ -3,8 +3,8 @@
 
 // include connected files later
 #include <Arduino.h>
-#include <ACAN2517FD.h>
-#include <SPI.h>
+#include <MoteusTeensy.h>
+#include <math.h>
 
 void CANFD_setup();
 void CANFD_loop();
