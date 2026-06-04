@@ -14,6 +14,26 @@
 //  CAN-FD configuration
 //——————————————————————————————————————————————————————————————————————————————
 
+
+struct __attribute__((__packed__)) JetsonCommand {
+  float positions[12];
+  float torques[12];
+  bool estop;
+}; // 48 + 48 + 1 = 97 total bytes
+
+struct __attribute__((__packed__)) TeensyFeedback {
+  float roll;
+  float pitch;
+  float yaw;
+  float gyro[3];
+  float accel[3];
+  float motor_positions[12];
+}; // 12 + 12 + 12 + 48 = 84 total bytes
+
+
+JetsonCommand incomingCmd;
+TeensyFeedback outgoingFeedback;
+
 // 1 Mbps arbitration and data rate.
 ACAN_T4FD_Settings canSettings(1000000, DataBitRateFactor::x1);
 
@@ -109,7 +129,7 @@ void setup() {
 
   // To clear any faults the controllers may have, we start by sending
   // a stop command to each.
-  for (uint16_t i = 1; i < 12; i++)
+  for (uint16_t i = 0; i < 12; i++)
     allMoteus[i].SetStop();
   
   Serial.println(F("all stopped"));
