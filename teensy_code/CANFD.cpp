@@ -173,28 +173,9 @@ void loop() {
     Serial.print(query.velocity);
   };
 
-  print_moteus(moteus1.last_result().values);
-  Serial.print(F(" / "));
-  print_moteus(moteus2.last_result().values);
-  Serial.print(F(" / "));
-  print_moteus(moteus3.last_result().values);
-  Serial.print(F(" / "));
-  print_moteus(moteus4.last_result().values);
-  Serial.print(F(" / "));
-  print_moteus(moteus5.last_result().values);
-  Serial.print(F(" / "));
-  print_moteus(moteus6.last_result().values);
-  Serial.print(F(" / "));
-  print_moteus(moteus7.last_result().values);
-  Serial.print(F(" / "));
-  print_moteus(moteus8.last_result().values);
-  Serial.print(F(" / "));
-  print_moteus(moteus9.last_result().values);
-  Serial.print(F(" / "));
-  print_moteus(moteus10.last_result().values);
-  Serial.print(F(" / "));
-  print_moteus(moteus11.last_result().values);
-  Serial.print(F(" / "));
-  print_moteus(moteus12.last_result().values);
+  for (int i = 0; i < 12; ++i) { // printing status of all moteus controllers
+    print_moteus(allMoteus[i].last_result().values);
+    Serial.print(F(" / "));
+  }
   Serial.println();
 }
